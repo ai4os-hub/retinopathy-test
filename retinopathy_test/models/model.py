@@ -93,6 +93,9 @@ def url_download(url_path, local_dir, data_file):
     :return: if file is downloaded (=local version exists), possible error
     """
 
+    if not os.path.exists(local_dir):
+        os.makedirs(local_dir, exist_ok=True)
+
     file_path = os.path.join(local_dir, data_file)
 
     def _progress(count, block_size, total_size):
@@ -235,11 +238,10 @@ def predict_file(img_path, trained_graph):
         output, error = rclone_copy(src_path=remote_src_path,
                                     dest_path=store_zip_path,
                                     cmd='copyurl')
-        print("[OUTPUT, ERROR] store_zip_path: %s, %s" % (output, error))
+        print("[OUTPUT, ERROR] store_zip_path: %s, %s" % (output, error)) if debug_model else ''
         if error:
             message = "[ERROR] graph was not properly copied. rclone returned: "
             message = message + error
-            print("[ERROR] store_zip_path: %s", message)
             raise Exception(message)
 
         # if .zip is present locally, de-archive it
