@@ -2,7 +2,7 @@ Retinopathy
 ==============================
 
 
-[![Build Status](https://jenkins.indigo-datacloud.eu/buildStatus/icon?job=Pipeline-as-code/DEEP-OC-org/retinopathy_test/master)](https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/job/retinopathy_test/job/master/)
+[![Build Status](https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/retinopathy-test/main)](https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/retinopathy-test/job/main//)
 
 
 Retinopathy classification using Tensorflow

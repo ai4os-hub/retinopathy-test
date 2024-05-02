@@ -25,7 +25,8 @@ MODELS_DIR = os.path.join(IN_OUT_BASE_DIR, 'models')
 
 #Retina_RemoteStorage = 'rshare:/deep-oc-apps/retinopathy_test'
 Retina_RemoteStorage = 'rshare:/retinopathy_test'
-Retina_RemotePublic = 'https://nc.deep-hybrid-datacloud.eu/s/yNsYpACAFbFS8Rp/download?path='
+#Retina_RemotePublic = 'https://nc.deep-hybrid-datacloud.eu/s/yNsYpACAFbFS8Rp/download?path='
+Retina_RemotePublic = 'https://share.services.ai4os.eu/index.php/s/XoBRDZkrnigWH4G/download?path='
 Retina_RemoteDataRecords = os.path.join(Retina_RemoteStorage, 'data', 'records')
 Retina_RemoteModelsUpload = os.path.join(Retina_RemoteStorage, 'models')
 Retina_LocalDataRecords = os.path.join(DATA_DIR, 'records')

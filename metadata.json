@@ -1,43 +1,51 @@
 {
-    "title": "DEEP OC Retinopathy Test",
-    "summary": "A Tensorflow model to classify Retinopathy.",
-    "description": [
-	    "This use case is concerned with the classification of biomedical images (of the retina) into five disease categories or ",
-	    "stages (from healthy to severe) using a deep learning approach.  Retinopathy is a fast-growing cause of blindness worldwide, ",
-	    "over 400 million people at risk from diabetic retinopathy alone. The disease can be successfully treated if it is detected ",
-	    "early. Colour fundus retinal photography uses a fundus camera (a specialized low power microscope with an attached camera) ",
-	    "to record color images of the condition of the interior surface of the eye, in order to document the presence of disorders ",
-	    "and monitor their change over time. Specialized medical experts interpret such images and are able to detect the presence ",
-	    "and stage of retinal eye disease such as diabetic retinopathy. However, due to a lack of suitably qualified medical ",
-	    "specialists in many parts of the world a comprehensive detection and treatment of the disease is difficult. This use case ",
-	    "focuses on a deep learning approach to automated classification of retinopathy based on color fundus retinal photography images."
-    ],
-    "keywords": [
-        "tensorflow", "docker", "deep learning", "trainable", "inference", "pre-trained", "image classification",  "api-v2"
-    ],
-    "license": "MIT",
-    "cite_url": "https://gitlab.com/niklaskoehler/retinopathy_model",
-    "date_creation": "2018-10-02",
-    "sources": {
-		"dockerfile_repo": "https://github.com/deephdc/DEEP-OC-retinopathy_test",
-		"docker_registry_repo": "deephdc/deep-oc-retinopathy_test",
-		"code": "https://github.com/deephdc/retinopathy_test"
-	},
-    "continuous_integration": {
-        "build_status_badge": "https://jenkins.indigo-datacloud.eu/buildStatus/icon?job=Pipeline-as-code/DEEP-OC-org/DEEP-OC-retinopathy_test/master",
-        "build_status_url": "https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/job/DEEP-OC-retinopathy_test/job/master"
-    },
-    "tosca": [
-        {
-            "title": "Mesos (GPU)",
-            "url": "https://raw.githubusercontent.com/indigo-dc/tosca-templates/master/deep-oc/deep-oc-marathon-webdav-https.yml",
-            "inputs": [
-                "rclone_conf",
-                "rclone_url",
-                "rclone_vendor",
-                "rclone_user",
-                "rclone_pass"
-            ]
-        }
-    ]
+  "title": "Retinopathy Test",
+  "summary": "A Tensorflow model to classify Retinopathy.",
+  "description": [
+    "This use case is concerned with the classification of biomedical images (of the retina) into five disease categories or ",
+    "stages (from healthy to severe) using a deep learning approach.  Retinopathy is a fast-growing cause of blindness worldwide, ",
+    "over 400 million people at risk from diabetic retinopathy alone. The disease can be successfully treated if it is detected ",
+    "early. Colour fundus retinal photography uses a fundus camera (a specialized low power microscope with an attached camera) ",
+    "to record color images of the condition of the interior surface of the eye, in order to document the presence of disorders ",
+    "and monitor their change over time. Specialized medical experts interpret such images and are able to detect the presence ",
+    "and stage of retinal eye disease such as diabetic retinopathy. However, due to a lack of suitably qualified medical ",
+    "specialists in many parts of the world a comprehensive detection and treatment of the disease is difficult. This use case ",
+    "focuses on a deep learning approach to automated classification of retinopathy based on color fundus retinal photography images."
+  ],
+  "keywords": [
+    "tensorflow",
+    "docker",
+    "deep learning",
+    "trainable",
+    "inference",
+    "pre-trained",
+    "image classification",
+    "api-v2"
+  ],
+  "license": "MIT",
+  "cite_url": "https://gitlab.com/niklaskoehler/retinopathy_model",
+  "date_creation": "2018-10-02",
+  "sources": {
+    "dockerfile_repo": "https://github.com/ai4os-hub/retinopathy-test",
+    "docker_registry_repo": "ai4oshub/retinopathy-test",
+    "code": "https://github.com/ai4os-hub/retinopathy-test",
+    "ai4_template": "ai4-template/1.9.9"
+  },
+  "continuous_integration": {
+    "build_status_badge": "https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/retinopathy-test/main",
+    "build_status_url": "https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/retinopathy-test/job/main/"
+  },
+  "tosca": [
+    {
+      "title": "Mesos (GPU)",
+      "url": "https://raw.githubusercontent.com/indigo-dc/tosca-templates/master/deep-oc/deep-oc-marathon-webdav-https.yml",
+      "inputs": [
+        "rclone_conf",
+        "rclone_url",
+        "rclone_vendor",
+        "rclone_user",
+        "rclone_pass"
+      ]
+    }
+  ]
 }
