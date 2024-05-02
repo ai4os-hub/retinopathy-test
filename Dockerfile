@@ -20,20 +20,22 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
          curl \
          wget \
          gcc \
+         libgl1 \
          libsm6 \
          libxext6 \
          libxrender1 \
          python3-setuptools \
          python3-pip \
          python3-dev \
-         python3-wheel && \
+         python3-wheel \
+         unzip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /root/.cache/pip/* && \
     rm -rf /tmp/* 
 
 # Upgrade pip
-RUN pip install --upgrade pip setuptools wheel && \
+RUN pip3 install --upgrade pip setuptools wheel && \
     python --version && \
     pip --version
 
@@ -78,10 +80,13 @@ RUN git clone --depth 1 -b $branch https://github.com/ai4os-hub/retinopathy-test
     rm -rf /tmp/* && \
     cd ..
 
-# Download default weights
+# Download default weights and unzip
 ENV RETINOPATHY_WEIGHTS_ZIP="1540408813_cpu.zip"
-RUN curl -L "https://share.services.ai4os.eu/index.php/s/XoBRDZkrnigWH4G/download?path=/models&files=${RETINOPATHY_WEIGHTS_ZIP}" \
-    -o /srv/retinopathy-test/models/retinopathy_serve/${RETINOPATHY_WEIGHTS_ZIP}
+RUN cd /srv/retinopathy-test/models/retinopathy_serve && \
+    curl -L "https://share.services.ai4os.eu/index.php/s/XoBRDZkrnigWH4G/download?path=/models&files=${RETINOPATHY_WEIGHTS_ZIP}" \
+    -o ${RETINOPATHY_WEIGHTS_ZIP} && \
+    unzip ${RETINOPATHY_WEIGHTS_ZIP} && \
+    rm ${RETINOPATHY_WEIGHTS_ZIP}
 
 # Open ports (deepaas, monitoring, ide)
 EXPOSE 5000 6006 8888

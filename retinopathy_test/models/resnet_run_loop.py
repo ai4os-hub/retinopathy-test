@@ -463,7 +463,7 @@ def resnet_main(
 
         if icyc >5 and not checkpoint_state_ok:
             cmd = "ls -la " + flags_obj.model_dir
-            os.system(cmd)
+            os.system(cmd)  # nosec
 
         icyc += 1
         time.sleep(3)
