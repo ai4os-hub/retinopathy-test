@@ -17,7 +17,7 @@ def split_tfrecord(tfrecord_path, split_size):
             except tf.errors.OutOfRangeError: break
 
 def main():
-    split_tfrecord("/srv/retinopathy_test/data/retinopathy_tr.tfrecords", 128)
+    split_tfrecord("/srv/retinopathy-test/data/retinopathy_tr.tfrecords", 128)
 
 if __name__ == '__main__':
     main()
